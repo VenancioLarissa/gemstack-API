@@ -2,6 +2,8 @@ pipeline {
    agent {
        docker {
            image 'ruby'
+           args '--network skynet'
+        //    rede onde se tem acesso ao ambiente
        }
             
    }
