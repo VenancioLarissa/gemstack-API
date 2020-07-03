@@ -18,8 +18,12 @@ pipeline {
       stage('Test') {
           steps {
               echo 'Executando testes'
-              sh 'rspec --format RspecJunitFormatter --out rspec.xml'
-              junit 'rspec.xml'
+              sh 'rspec --format RspecJunitFormatter --out rspec.xml'    
+          }
+          post {
+              always{
+                  junit 'rspec.xml'
+              }
           }
       }
       stage('UAT') {
