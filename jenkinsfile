@@ -1,0 +1,26 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Build') {
+         steps {
+            echo 'Compilando e/ou baixando dependencias'
+         }
+      }
+      stage('Test') {
+          steps {
+              echo 'Executando testes'
+          }
+      }
+      stage('UAT') {
+          steps {
+              echo 'Testes de aceitacao'
+          }
+      }
+      stage('Prod') {
+          steps {
+              echo 'App pronto para producao'
+          }
+      }
+   }
+}
