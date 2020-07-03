@@ -21,7 +21,7 @@ pipeline {
               sh 'rspec --format RspecJunitFormatter --out rspec.xml'    
           }
           post {
-              always{
+              always {
                   junit 'rspec.xml'
               }
           }
